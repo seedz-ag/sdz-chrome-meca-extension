@@ -1,0 +1,26 @@
+{
+  "name": "M.E.C.A.",
+  "version": "0.5",
+  "description": "M.E.C.A. (Melhor Extensão do Chrome para o ADM). Apenas uma ajuda temporária ao layout do ADM Seedz enquanto nosso time esta desenvolvendo a versão oficial.",
+  "manifest_version": 2,
+
+  "icons": {
+    "48": "Logo Cor 4.png"
+  },
+
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+
+  "permissions": [
+    "activeTab",
+    "downloads"
+  ],
+
+  "content_scripts": [
+    {
+      "matches": ["https://adm.seedz.ag/*"],
+      "js": ["content-script.js"]
+    }
+  ]
+}
