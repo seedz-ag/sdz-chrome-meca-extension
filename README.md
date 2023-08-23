@@ -17,7 +17,7 @@ Siga os passos abaixo para instalar a extensão da Seedz:
 
 4 - Agora é só recarregar a página do ADM da Seedz (https://adm.seedz.ag/) e usar a vontade! Não precisa clicar em nada, os ícones já começaram a aparecer dentro do ADM Seedz.
 
-========================================= Para nerds e curiosos =========================================
+======= Para nerds e curiosos =======
 
 "M.E.C.A." significa Melhor Extensão do Chrome para Administradores (ADM). 
 
