@@ -307,7 +307,7 @@ function insertExcelIconBeforeTable2() {
 
 // Chame a função para inserir o ícone antes da tabela
 window.onload = function() {
-    window.alert("A 'Extensão Seedz' já está em Execução!");
+    window.alert("A 'M.E.C.A. Seedz' já está em Execução!");
     insertExcelIconBeforeTable(); // tipo classico da tabela
     insertExcelIconBeforeTable2(); // tipo específico de tabela
 
