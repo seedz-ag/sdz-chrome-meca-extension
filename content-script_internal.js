@@ -159,7 +159,7 @@ function insertExcelIconBeforeTable() {
             excelIcon.alt = 'Excel Icon';
             excelIcon.id = i;
             excelIcon.style.margin = '15px 0 0 15px';
-            excelIcon.style.height = '60px';
+            excelIcon.style.height = '30px';
             excelIcon.style.cursor = 'pointer';
             excelIcon.addEventListener('click', function() {
                 const clickedIconId = parseInt(this.id);
@@ -290,7 +290,7 @@ function insertExcelIconBeforeTable2() {
             excelIcon.alt = 'Excel Icon';
             excelIcon.id = i;
             excelIcon.style.margin = '15px 0 0 15px';
-            excelIcon.style.height = '60px';
+            excelIcon.style.height = '30px';
             excelIcon.style.cursor = 'pointer';
             excelIcon.addEventListener('click', function() {
                 const clickedIconId = parseInt(this.id);
