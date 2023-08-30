@@ -94,7 +94,7 @@ async function fetchAndExportAllPages(filename, id) {
                     } else {
                         count = -1;
                     }
-                    while (count < 30 && count >= 0) {
+                    while (count < 60 && count >= 0) {
                         let currentTable = mainElement.querySelectorAll('table')[id].textContent;
                         if (lastTable !== currentTable) {
                             count = -1;
@@ -103,7 +103,7 @@ async function fetchAndExportAllPages(filename, id) {
                             count++;
                         }
                     }
-                    if (count == 30) {
+                    if (count == 60) {
                         window.alert("Erro na velocidade de atualização da tabela. O processo de download foi interrompido.");
                         return;
                     }
@@ -159,7 +159,7 @@ function insertExcelIconBeforeTable() {
             excelIcon.alt = 'Excel Icon';
             excelIcon.id = i;
             excelIcon.style.margin = '15px 0 0 15px';
-            excelIcon.style.height = '30px';
+            excelIcon.style.height = '60px';
             excelIcon.style.cursor = 'pointer';
             excelIcon.addEventListener('click', function() {
                 const clickedIconId = parseInt(this.id);
@@ -218,10 +218,10 @@ async function fetchAndExportAllPages2(filename, id) {
                     collectTableData2(mainElement, allData, id);
                     let get = 0;
                     let lastTable = null;
-                    while (get < 30) {
+                    while (get < 60) {
                         if (mainElement.querySelectorAll('.v-expansion-panel')[id] != undefined) {
                             lastTable = mainElement.querySelectorAll('.v-expansion-panel')[id].textContent;
-                            get = 30;
+                            get = 60;
                         } else {
                             await new Promise(resolve => setTimeout(resolve, 500)); // Aguarda 0.5 segundos
                             count++;
@@ -234,7 +234,7 @@ async function fetchAndExportAllPages2(filename, id) {
                         count = -1;
                     }
                     let currentTable = lastTable;
-                    while (count < 30 && count >= 0) {
+                    while (count < 60 && count >= 0) {
                         if (mainElement.querySelectorAll('.v-expansion-panel')[id] != undefined) {
                             currentTable = mainElement.querySelectorAll('.v-expansion-panel')[id].textContent;
                             if (lastTable !== currentTable) {
@@ -290,7 +290,7 @@ function insertExcelIconBeforeTable2() {
             excelIcon.alt = 'Excel Icon';
             excelIcon.id = i;
             excelIcon.style.margin = '15px 0 0 15px';
-            excelIcon.style.height = '30px';
+            excelIcon.style.height = '60px';
             excelIcon.style.cursor = 'pointer';
             excelIcon.addEventListener('click', function() {
                 const clickedIconId = parseInt(this.id);
