@@ -307,7 +307,22 @@ function insertExcelIconBeforeTable2() {
 
 // Chame a função para inserir o ícone antes da tabela
 window.onload = function() {
-    window.alert("A 'M.E.C.A. Seedz' já está em Execução!");
+    // window.alert("A 'M.E.C.A. Seedz' já está em Execução!");
+    var element1 = document.createElement("a");
+    element1.href = "https://adm.seedz.ag/";
+    element1.style.width = "200px";
+    element1.style.height = "80px";
+    element1.style.position = "fixed";
+    var toolbarContent = document.getElementsByClassName("v-toolbar__content")[1];
+    toolbarContent.insertBefore(element1, toolbarContent.firstChild);
+    var element2 = document.getElementsByClassName("spacer")[1]
+    element2.textContent = "A Extensão 'M.E.C.A. Seedz' está em Execução!"
+    element2.style.marginLeft = "20px"
+    element2.style.bottom = "0px"
+    element2.style.left = "20px"
+    element2.style.marginTop = "30px"
+    element2.style.color = "gray"
+
     insertExcelIconBeforeTable(); // tipo classico da tabela
     insertExcelIconBeforeTable2(); // tipo específico de tabela
 
