@@ -300,12 +300,6 @@ function insertExcelIconBeforeTable2() {
     }
 }
 
-function iconeLoop() {
-    insertExcelIconBeforeTable();
-    insertExcelIconBeforeTable2();
-    setInterval(iconeLoop, 1500);
-}
-
 // Chame a função para inserir o ícone antes da tabela
 window.onload = function() {
     // window.alert("A 'M.E.C.A. Seedz' já está em Execução!");
@@ -326,10 +320,24 @@ window.onload = function() {
 
     insertExcelIconBeforeTable(); // tipo classico da tabela
     insertExcelIconBeforeTable2(); // tipo específico de tabela
-    iconeLoop();
 
     // Executa a função a cada 1.5 segundos
-    setInterval(iconeLoop, 1500);
-    // setInterval(insertExcelIconBeforeTable, 1500);
-    // setInterval(insertExcelIconBeforeTable2, 1500);
+    setInterval(insertExcelIconBeforeTable, 1500);
+    setInterval(insertExcelIconBeforeTable2, 1500);
+
+    // Executa a função a cada 3 segundos
+    setInterval(insertExcelIconBeforeTable, 3000);
+    setInterval(insertExcelIconBeforeTable2, 3000);
+	
+    // Executa a função a cada 6 segundos
+    setInterval(insertExcelIconBeforeTable, 6000);
+    setInterval(insertExcelIconBeforeTable2, 6000);
+	
+    // Executa a função a cada 12 segundos
+    setInterval(insertExcelIconBeforeTable, 12000);
+    setInterval(insertExcelIconBeforeTable2, 12000);
+
+    // Executa a função a cada 20 segundos
+    setInterval(insertExcelIconBeforeTable, 20000);
+    setInterval(insertExcelIconBeforeTable2, 20000);
 };
