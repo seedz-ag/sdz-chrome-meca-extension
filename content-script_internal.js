@@ -144,6 +144,8 @@ function collectTableData(mainElement, allData, id) {
 }
 
 function insertExcelIconBeforeTable() {
+    setInterval(insertExcelIconBeforeTable, 1500);
+
     const mainElement = document.querySelector('main');
     const tables = mainElement.querySelectorAll('table');
     const excelIconUrl = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1-cz7MFvpQ7rGJbthiRbXgJIHxrJIIvrTiA4RgVw5ug&s';
@@ -275,6 +277,8 @@ function collectTableData2(mainElement, allData, id) {
 }
 
 function insertExcelIconBeforeTable2() {
+    setInterval(insertExcelIconBeforeTable2, 1500);
+
     const mainElement = document.querySelector('main');
     const tables = mainElement.querySelectorAll('.v-expansion-panel');
     const excelIconUrl = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1-cz7MFvpQ7rGJbthiRbXgJIHxrJIIvrTiA4RgVw5ug&s';
@@ -322,6 +326,6 @@ window.onload = function() {
     insertExcelIconBeforeTable2(); // tipo específico de tabela
 
     // Executa a função a cada 1.5 segundos
-    setInterval(insertExcelIconBeforeTable, 1500);
-    setInterval(insertExcelIconBeforeTable2, 1500);
+    // setInterval(insertExcelIconBeforeTable, 1500);
+    // setInterval(insertExcelIconBeforeTable2, 1500);
 };
