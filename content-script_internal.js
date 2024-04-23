@@ -275,14 +275,15 @@ function collectTableData2(mainElement, allData, id) {
 }
 
 function insertExcelIconBeforeTable2() {
-    console.log("insertExcelIconBeforeTable2");
     const mainElement = document.querySelector('main');
     const tables = mainElement.querySelectorAll('.v-expansion-panel');
     const excelIconUrl = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1-cz7MFvpQ7rGJbthiRbXgJIHxrJIIvrTiA4RgVw5ug&s';
     let excelIcon = document.querySelector('#excel-icon');
     let i = 0;
 
-    if (tables[0].previousElementSibling == null || (tables[0].previousElementSibling != null && tables[0].previousElementSibling.src != excelIconUrl)) {
+    if (tables.length === 0) {
+        console.error("No <table> elements found on the page.");
+    } else {
         tables.forEach(table => {
             const excelIcon = document.createElement('img');
             excelIcon.src = excelIconUrl;
@@ -296,8 +297,11 @@ function insertExcelIconBeforeTable2() {
                 fetchAndExportAllPages2('dados.csv', clickedIconId);
             });
             i = i + 1;
-	    table.parentNode.insertBefore(excelIcon, table);
-	});
+
+            if (table.previousElementSibling.src != excelIconUrl) {
+                table.parentNode.insertBefore(excelIcon, table);
+            }
+        });
     }
 }
 
@@ -319,28 +323,10 @@ window.onload = function() {
     element2.style.marginTop = "30px"
     element2.style.color = "gray"
 
-    console.log("onload");
-	
     insertExcelIconBeforeTable(); // tipo classico da tabela
     insertExcelIconBeforeTable2(); // tipo específico de tabela
 
     // Executa a função a cada 1.5 segundos
     setInterval(insertExcelIconBeforeTable, 1500);
     setInterval(insertExcelIconBeforeTable2, 1500);
-
-    // Executa a função a cada 3 segundos
-    setInterval(insertExcelIconBeforeTable, 3000);
-    setInterval(insertExcelIconBeforeTable2, 3000);
-
-    // Executa a função a cada 6 segundos
-    setInterval(insertExcelIconBeforeTable, 6000);
-    setInterval(insertExcelIconBeforeTable2, 6000);
-
-    // Executa a função a cada 12 segundos
-    setInterval(insertExcelIconBeforeTable, 12000);
-    setInterval(insertExcelIconBeforeTable2, 12000);
-
-    // Executa a função a cada 20 segundos
-    setInterval(insertExcelIconBeforeTable, 20000);
-    setInterval(insertExcelIconBeforeTable2, 20000);
 };
