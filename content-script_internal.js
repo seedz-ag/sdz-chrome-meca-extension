@@ -144,8 +144,6 @@ function collectTableData(mainElement, allData, id) {
 }
 
 function insertExcelIconBeforeTable() {
-    setInterval(insertExcelIconBeforeTable, 1500);
-
     const mainElement = document.querySelector('main');
     const tables = mainElement.querySelectorAll('table');
     const excelIconUrl = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1-cz7MFvpQ7rGJbthiRbXgJIHxrJIIvrTiA4RgVw5ug&s';
@@ -277,8 +275,6 @@ function collectTableData2(mainElement, allData, id) {
 }
 
 function insertExcelIconBeforeTable2() {
-    setInterval(insertExcelIconBeforeTable2, 1500);
-
     const mainElement = document.querySelector('main');
     const tables = mainElement.querySelectorAll('.v-expansion-panel');
     const excelIconUrl = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1-cz7MFvpQ7rGJbthiRbXgJIHxrJIIvrTiA4RgVw5ug&s';
@@ -304,6 +300,12 @@ function insertExcelIconBeforeTable2() {
     }
 }
 
+function iconeLoop() {
+    insertExcelIconBeforeTable();
+    insertExcelIconBeforeTable2();
+    setInterval(iconeLoop, 1500);
+}
+
 // Chame a função para inserir o ícone antes da tabela
 window.onload = function() {
     // window.alert("A 'M.E.C.A. Seedz' já está em Execução!");
@@ -322,10 +324,11 @@ window.onload = function() {
     element2.style.marginTop = "30px"
     element2.style.color = "gray"
 
-    insertExcelIconBeforeTable(); // tipo classico da tabela
-    insertExcelIconBeforeTable2(); // tipo específico de tabela
+    // insertExcelIconBeforeTable(); // tipo classico da tabela
+    // insertExcelIconBeforeTable2(); // tipo específico de tabela
 
     // Executa a função a cada 1.5 segundos
+    iconeLoop();
     // setInterval(insertExcelIconBeforeTable, 1500);
     // setInterval(insertExcelIconBeforeTable2, 1500);
 };
