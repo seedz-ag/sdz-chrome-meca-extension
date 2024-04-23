@@ -275,6 +275,7 @@ function collectTableData2(mainElement, allData, id) {
 }
 
 function insertExcelIconBeforeTable2() {
+    console.log("insertExcelIconBeforeTable2");
     const mainElement = document.querySelector('main');
     const tables = mainElement.querySelectorAll('.v-expansion-panel');
     const excelIconUrl = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1-cz7MFvpQ7rGJbthiRbXgJIHxrJIIvrTiA4RgVw5ug&s';
@@ -318,6 +319,8 @@ window.onload = function() {
     element2.style.marginTop = "30px"
     element2.style.color = "gray"
 
+    console.log("onload");
+	
     insertExcelIconBeforeTable(); // tipo classico da tabela
     insertExcelIconBeforeTable2(); // tipo específico de tabela
 
