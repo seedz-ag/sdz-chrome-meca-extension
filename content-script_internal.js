@@ -299,7 +299,7 @@ function insertExcelIconBeforeTable2() {
 	});
     }
 }
-insertExcelIconBeforeTable2();
+
 // Chame a função para inserir o ícone antes da tabela
 window.onload = function() {
     // window.alert("A 'M.E.C.A. Seedz' já está em Execução!");
