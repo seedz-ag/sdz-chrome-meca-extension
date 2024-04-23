@@ -328,7 +328,7 @@ window.onload = function() {
     // insertExcelIconBeforeTable2(); // tipo específico de tabela
 
     // Executa a função a cada 1.5 segundos
-    iconeLoop();
+    setInterval(iconeLoop, 1500);
     // setInterval(insertExcelIconBeforeTable, 1500);
     // setInterval(insertExcelIconBeforeTable2, 1500);
 };
