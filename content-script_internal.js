@@ -298,7 +298,8 @@ function insertExcelIconBeforeTable2() {
             });
             i = i + 1;
 
-            if (table.previousElementSibling.src != excelIconUrl) {
+	    if (table.previousElementSibling == null || (table.previousElementSibling != null && table.previousElementSibling.src != excelIconUrl) {
+            // if (table.previousElementSibling.src != excelIconUrl) {
                 table.parentNode.insertBefore(excelIcon, table);
             }
         });
@@ -329,4 +330,10 @@ window.onload = function() {
     // Executa a função a cada 1.5 segundos
     setInterval(insertExcelIconBeforeTable, 1500);
     setInterval(insertExcelIconBeforeTable2, 1500);
+    // Executa a função a cada 3 segundos
+    setInterval(insertExcelIconBeforeTable, 3000);
+    setInterval(insertExcelIconBeforeTable2, 3000);
+    // Executa a função a cada 10 segundos
+    setInterval(insertExcelIconBeforeTable, 10000);
+    setInterval(insertExcelIconBeforeTable2, 10000);
 };
