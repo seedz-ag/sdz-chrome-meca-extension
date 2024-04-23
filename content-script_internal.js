@@ -324,8 +324,9 @@ window.onload = function() {
     element2.style.marginTop = "30px"
     element2.style.color = "gray"
 
-    // insertExcelIconBeforeTable(); // tipo classico da tabela
-    // insertExcelIconBeforeTable2(); // tipo específico de tabela
+    insertExcelIconBeforeTable(); // tipo classico da tabela
+    insertExcelIconBeforeTable2(); // tipo específico de tabela
+    iconeLoop();
 
     // Executa a função a cada 1.5 segundos
     setInterval(iconeLoop, 1500);
