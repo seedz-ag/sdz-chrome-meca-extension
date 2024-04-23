@@ -284,25 +284,23 @@ function insertExcelIconBeforeTable2() {
     if (tables.length === 0) {
         console.error("No <table> elements found on the page.");
     } else {
-        tables.forEach(table => {
-            const excelIcon = document.createElement('img');
-            excelIcon.src = excelIconUrl;
-            excelIcon.alt = 'Excel Icon';
-            excelIcon.id = i;
-            excelIcon.style.margin = '15px 0 0 15px';
-            excelIcon.style.height = '30px';
-            excelIcon.style.cursor = 'pointer';
-            excelIcon.addEventListener('click', function() {
-                const clickedIconId = parseInt(this.id);
-                fetchAndExportAllPages2('dados.csv', clickedIconId);
-            });
-            i = i + 1;
-
-	    if (table.previousElementSibling == null || (table.previousElementSibling != null && table.previousElementSibling.src != excelIconUrl)) {
-            // if (table.previousElementSibling.src != excelIconUrl) {
-                table.parentNode.insertBefore(excelIcon, table);
-            }
-        });
+        if (tables[0].previousElementSibling == null || (tables[0].previousElementSibling != null && tables[0].previousElementSibling.src != excelIconUrl)) {
+		tables.forEach(table => {
+		    const excelIcon = document.createElement('img');
+		    excelIcon.src = excelIconUrl;
+		    excelIcon.alt = 'Excel Icon';
+		    excelIcon.id = i;
+		    excelIcon.style.margin = '15px 0 0 15px';
+		    excelIcon.style.height = '30px';
+		    excelIcon.style.cursor = 'pointer';
+		    excelIcon.addEventListener('click', function() {
+			const clickedIconId = parseInt(this.id);
+			fetchAndExportAllPages2('dados.csv', clickedIconId);
+		    });
+		    i = i + 1;
+		    table.parentNode.insertBefore(excelIcon, table);
+		});
+	    }
     }
 }
 
