@@ -281,9 +281,7 @@ function insertExcelIconBeforeTable2() {
     let excelIcon = document.querySelector('#excel-icon');
     let i = 0;
 
-    if (tables.length === 0) {
-        console.error("No <table> elements found on the page.");
-    } else {
+    if (tables[0].previousElementSibling == null || (tables[0].previousElementSibling != null && tables[0].previousElementSibling.src != excelIconUrl)) {
         tables.forEach(table => {
             const excelIcon = document.createElement('img');
             excelIcon.src = excelIconUrl;
@@ -297,14 +295,11 @@ function insertExcelIconBeforeTable2() {
                 fetchAndExportAllPages2('dados.csv', clickedIconId);
             });
             i = i + 1;
-
-            if (table.previousElementSibling && table.previousElementSibling.src != excelIconUrl) {
-                table.parentNode.insertBefore(excelIcon, table);
-            }
-        });
+	    table.parentNode.insertBefore(excelIcon, table);
+	});
     }
 }
-
+insertExcelIconBeforeTable2();
 // Chame a função para inserir o ícone antes da tabela
 window.onload = function() {
     // window.alert("A 'M.E.C.A. Seedz' já está em Execução!");
