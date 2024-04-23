@@ -298,9 +298,9 @@ function insertExcelIconBeforeTable2() {
             });
             i = i + 1;
 
-            //if (table.previousElementSibling.src != excelIconUrl) {
+            if (table.previousElementSibling != excelIconUrl) {
                 table.parentNode.insertBefore(excelIcon, table);
-            //}
+            }
         });
     }
 }
