@@ -328,11 +328,11 @@ window.onload = function() {
     // Executa a função a cada 3 segundos
     setInterval(insertExcelIconBeforeTable, 3000);
     setInterval(insertExcelIconBeforeTable2, 3000);
-	
+
     // Executa a função a cada 6 segundos
     setInterval(insertExcelIconBeforeTable, 6000);
     setInterval(insertExcelIconBeforeTable2, 6000);
-	
+
     // Executa a função a cada 12 segundos
     setInterval(insertExcelIconBeforeTable, 12000);
     setInterval(insertExcelIconBeforeTable2, 12000);
