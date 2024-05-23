@@ -367,7 +367,7 @@ window.onload = function() {
   document.body.appendChild(element1);
 
   const element2 = document.createElement('div');
-  element2.textContent = "A Extensão 'M.E.C.A. Seedz' está em Execução!";
+  element2.textContent = "A Extensão 'M.E.C.A. Seedz' está em Execução! (v0.5.3)";
   element2.style.position = "fixed"; 
   if (!document.getElementsByClassName("v-toolbar__content")[1]) {
     element2.style.top = "10px";  
