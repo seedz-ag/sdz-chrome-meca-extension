@@ -391,5 +391,5 @@ window.onload = function() {
   // Executa a função a cada 10 segundos
   setInterval(insertExcelIconBeforeTable, 10000);
   setInterval(insertExcelIconBeforeTable2, 10000);
-
+  console.log("M.E.C.A. Seedz v0.5.3");
 };
