@@ -358,11 +358,12 @@ function start() {
   element1.style.width = "200px";
   if (!document.getElementsByClassName("v-toolbar__content")[1]) {
     element1.style.height = "55px"; 
+    element1.style.zIndex = "400";  
   } else {
     element1.style.height = "80px";
+    element1.style.zIndex = "200";  
   }
   element1.style.position = "fixed";
-  element1.style.zIndex = "200";  
   element1.id = "element1";
   if(!document.querySelector('#element1')) {
     document.body.appendChild(element1);
@@ -373,12 +374,13 @@ function start() {
   element2.style.position = "fixed"; 
   if (!document.getElementsByClassName("v-toolbar__content")[1]) {
     element2.style.top = "10px";  
+    element2.style.zIndex = "400"; 
   } else {
-    element2.style.top = "50px";  
+    element2.style.top = "50px"; 
+    element2.style.zIndex = "200";  
   }
   element2.style.left = "270px";      
   element2.style.color = "gray";
-  element2.style.zIndex = "200"; 
   element2.id = "element2";
   if(!document.querySelector('#element2')) {
     document.body.appendChild(element2);
