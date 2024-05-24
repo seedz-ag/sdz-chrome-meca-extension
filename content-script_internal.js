@@ -349,8 +349,7 @@ function insertExcelIconBeforeTable2() {
   }
 }
 
-// Chame a função para inserir o ícone antes da tabela
-window.onload = function() {
+function start() {
 
   var element1 = document.createElement("a");
   element1.href = "https://adm.seedz.ag/";
@@ -359,25 +358,33 @@ window.onload = function() {
   element1.style.width = "200px";
   if (!document.getElementsByClassName("v-toolbar__content")[1]) {
     element1.style.height = "55px"; 
+    element1.style.zIndex = "400";  
   } else {
     element1.style.height = "80px";
+    element1.style.zIndex = "200";  
   }
   element1.style.position = "fixed";
-  element1.style.zIndex = "1000";  
-  document.body.appendChild(element1);
+  element1.id = "element1";
+  if(!document.querySelector('#element1')) {
+    document.body.appendChild(element1);
+  }
 
   const element2 = document.createElement('div');
-  element2.textContent = "A Extensão 'M.E.C.A. Seedz' está em Execução! (v0.5.3)";
+  element2.textContent = "A Extensão 'M.E.C.A. Seedz' está em Execução! v0.5.4";
   element2.style.position = "fixed"; 
   if (!document.getElementsByClassName("v-toolbar__content")[1]) {
     element2.style.top = "10px";  
+    element2.style.zIndex = "400"; 
   } else {
-    element2.style.top = "50px";  
+    element2.style.top = "50px"; 
+    element2.style.zIndex = "200";  
   }
   element2.style.left = "270px";      
   element2.style.color = "gray";
-  element2.style.zIndex = "1000"; 
-  document.body.appendChild(element2);
+  element2.id = "element2";
+  if(!document.querySelector('#element2')) {
+    document.body.appendChild(element2);
+  }
 
   insertExcelIconBeforeTable(); // tipo classico da tabela
   insertExcelIconBeforeTable2(); // tipo específico de tabela
@@ -391,5 +398,13 @@ window.onload = function() {
   // Executa a função a cada 10 segundos
   setInterval(insertExcelIconBeforeTable, 10000);
   setInterval(insertExcelIconBeforeTable2, 10000);
-  console.log("M.E.C.A. Seedz v0.5.3");
-};
+
+}
+
+// Chame a função para inserir o ícone antes da tabela
+window.onload = start;
+setInterval(start, 1000);
+setInterval(start, 2000);
+setInterval(start, 3000);
+setInterval(start, 6000);
+setInterval(start, 10000);
