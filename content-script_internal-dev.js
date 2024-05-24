@@ -369,7 +369,7 @@ function start() {
   }
 
   const element2 = document.createElement('div');
-  element2.textContent = "A Extensão 'M.E.C.A. Seedz' está em Execução!";
+  element2.textContent = "A Extensão 'M.E.C.A. Seedz' está em Execução! v0.5.4";
   element2.style.position = "fixed"; 
   if (!document.getElementsByClassName("v-toolbar__content")[1]) {
     element2.style.top = "10px";  
@@ -379,8 +379,7 @@ function start() {
   element2.style.left = "270px";      
   element2.style.color = "gray";
   element2.style.zIndex = "1000"; 
-  element2.id = "element1";
-  document.body.appendChild(element2);
+  element2.id = "element2";
   if(!document.querySelector('#element2')) {
     document.body.appendChild(element2);
   }
