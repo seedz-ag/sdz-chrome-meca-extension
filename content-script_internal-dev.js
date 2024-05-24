@@ -363,7 +363,10 @@ function start() {
   }
   element1.style.position = "fixed";
   element1.style.zIndex = "1000";  
-  document.body.appendChild(element1);
+  element1.id = "element1";
+  if(!document.querySelector('#element1')) {
+    document.body.appendChild(element1);
+  }
 
   const element2 = document.createElement('div');
   element2.textContent = "A Extensão 'M.E.C.A. Seedz' está em Execução!";
@@ -376,7 +379,11 @@ function start() {
   element2.style.left = "270px";      
   element2.style.color = "gray";
   element2.style.zIndex = "1000"; 
+  element2.id = "element1";
   document.body.appendChild(element2);
+  if(!document.querySelector('#element2')) {
+    document.body.appendChild(element2);
+  }
 
   insertExcelIconBeforeTable(); // tipo classico da tabela
   insertExcelIconBeforeTable2(); // tipo específico de tabela
