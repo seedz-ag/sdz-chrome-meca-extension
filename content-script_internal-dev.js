@@ -403,6 +403,8 @@ function start() {
 
 // Chame a função para inserir o ícone antes da tabela
 window.onload = start;
+setInterval(start, 1000);
+setInterval(start, 2000);
 setInterval(start, 3000);
 setInterval(start, 6000);
 setInterval(start, 10000);
