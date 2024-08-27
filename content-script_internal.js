@@ -66,7 +66,7 @@ async function fetchAndExportAllPages(filename, id) {
           // console.error("No <main> element found on the page.");
           return;
       }
-      console.log("Versão Dev");
+      
       let paginationItems = mainElement.querySelectorAll('.sc-klVQfs') || mainElement.querySelectorAll('.sc-hRJfrW') || mainElement.querySelectorAll('.v-pagination__item');
       if (mainElement.querySelectorAll('.sc-hRJfrW')) {
         if (mainElement.querySelectorAll('.sc-hRJfrW').length == 0) {
