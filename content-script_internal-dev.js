@@ -66,7 +66,7 @@ async function fetchAndExportAllPages(filename, id) {
           // console.error("No <main> element found on the page.");
           return;
       }
-
+      console.log("Versão Dev");
       let paginationItems = mainElement.querySelectorAll('.sc-klVQfs') || mainElement.querySelectorAll('.sc-hRJfrW') || mainElement.querySelectorAll('.v-pagination__item');
       if (mainElement.querySelectorAll('.sc-hRJfrW')) {
         if (mainElement.querySelectorAll('.sc-hRJfrW').length == 0) {
@@ -76,7 +76,7 @@ async function fetchAndExportAllPages(filename, id) {
 
       const allData = [];
 
-    collectTableHeader(mainElement, allData, id);
+      collectTableHeader(mainElement, allData, id);
 
       if (paginationItems.length == 0) {
         collectTableData(mainElement, allData, id);
@@ -85,7 +85,7 @@ async function fetchAndExportAllPages(filename, id) {
           const maxPageNumber = parseInt(paginationItems[paginationItems.length-1].textContent, 10);
 
           for (let i = 1; i <= maxPageNumber; i++) {
-            let paginationItemsDinamic = mainElement.querySelectorAll('.sc-hRJfrW') || mainElement.querySelectorAll('.v-pagination__item');
+            let paginationItemsDinamic = mainElement.querySelectorAll('.sc-klVQfs') || mainElement.querySelectorAll('.sc-hRJfrW') || mainElement.querySelectorAll('.v-pagination__item');
             if (mainElement.querySelectorAll('.sc-hRJfrW')) {
               if (mainElement.querySelectorAll('.sc-hRJfrW').length == 0) {
                 paginationItemsDinamic = mainElement.querySelectorAll('.v-pagination__item');
@@ -96,7 +96,11 @@ async function fetchAndExportAllPages(filename, id) {
               if (mainElement.querySelectorAll('.sc-hRJfrW.kMuCIt').length != 0) {
                 thisPageNumber = parseInt(mainElement.querySelectorAll('.sc-hRJfrW.kMuCIt')[0].textContent, 10);
               } else {
-                thisPageNumber = parseInt(mainElement.querySelectorAll('.v-pagination__item--active')[0].textContent, 10);
+                if (mainElement.querySelectorAll('.sc-klVQfs')) {
+                  thisPageNumber = parseInt(mainElement.querySelectorAll('.sc-klVQfs.hIIYss')[0].textContent, 10);
+                } else {
+                  thisPageNumber = parseInt(mainElement.querySelectorAll('.v-pagination__item--active')[0].textContent, 10);
+                }
               }
             } else {
               thisPageNumber = parseInt(mainElement.querySelectorAll('.v-pagination__item--active')[0].textContent, 10);
