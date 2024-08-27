@@ -67,7 +67,7 @@ async function fetchAndExportAllPages(filename, id) {
           return;
       }
 
-      let paginationItems = mainElement.querySelectorAll('.sc-hRJfrW') || mainElement.querySelectorAll('.v-pagination__item');
+      let paginationItems = mainElement.querySelectorAll('.sc-klVQfs') || mainElement.querySelectorAll('.sc-hRJfrW') || mainElement.querySelectorAll('.v-pagination__item');
       if (mainElement.querySelectorAll('.sc-hRJfrW')) {
         if (mainElement.querySelectorAll('.sc-hRJfrW').length == 0) {
           paginationItems = mainElement.querySelectorAll('.v-pagination__item');
