@@ -86,15 +86,15 @@ async function fetchAndExportAllPages(filename, id) {
       }
 
       const allData = [];
-
+console.log("Versão Dev2");
       collectTableHeader(mainElement, allData, id);
-
+console.log("Versão Dev3");
       if (paginationItems.length == 0) {
         collectTableData(mainElement, allData, id);
 
       } else {
           const maxPageNumber = parseInt(paginationItems[paginationItems.length-1].textContent, 10);
-
+console.log("Versão Dev4");
           for (let i = 1; i <= maxPageNumber; i++) {
             let paginationItemsDinamic = mainElement.querySelectorAll('.sc-klVQfs');
             if (mainElement.querySelectorAll('.sc-hRJfrW')) {
