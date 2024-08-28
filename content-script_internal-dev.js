@@ -67,15 +67,15 @@ async function fetchAndExportAllPages(filename, id) {
           return;
       }
       console.log("Versão Dev");
-      let paginationItemsDinamic = mainElement.querySelectorAll('.sc-klVQfs')
+      let paginationItems = mainElement.querySelectorAll('.sc-klVQfs')
       if (mainElement.querySelectorAll('.sc-hRJfrW')) {
         if (mainElement.querySelectorAll('.sc-hRJfrW').length > 0) {
-          paginationItemsDinamic = mainElement.querySelectorAll('.sc-hRJfrW');
+          paginationItems = mainElement.querySelectorAll('.sc-hRJfrW');
         }
       } else {
         if (mainElement.querySelectorAll('.v-pagination__item')){
           if (mainElement.querySelectorAll('.v-pagination__item').length > 0) {
-            paginationItemsDinamic = mainElement.querySelectorAll('.v-pagination__item');
+            paginationItems = mainElement.querySelectorAll('.v-pagination__item');
           }
         }
       }
