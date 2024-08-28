@@ -67,7 +67,18 @@ async function fetchAndExportAllPages(filename, id) {
           return;
       }
       console.log("Versão Dev");
-      let paginationItems = mainElement.querySelectorAll('.sc-klVQfs') || mainElement.querySelectorAll('.sc-hRJfrW') || mainElement.querySelectorAll('.v-pagination__item');
+      let paginationItemsDinamic = mainElement.querySelectorAll('.sc-klVQfs')
+      if (mainElement.querySelectorAll('.sc-hRJfrW')) {
+        if (mainElement.querySelectorAll('.sc-hRJfrW').length > 0) {
+          paginationItemsDinamic = mainElement.querySelectorAll('.sc-hRJfrW');
+        }
+      } else {
+        if (mainElement.querySelectorAll('.v-pagination__item')){
+          if (mainElement.querySelectorAll('.v-pagination__item').length > 0) {
+            paginationItemsDinamic = mainElement.querySelectorAll('.v-pagination__item');
+          }
+        }
+      }
       if (mainElement.querySelectorAll('.sc-hRJfrW')) {
         if (mainElement.querySelectorAll('.sc-hRJfrW').length == 0) {
           paginationItems = mainElement.querySelectorAll('.v-pagination__item');
@@ -85,7 +96,18 @@ async function fetchAndExportAllPages(filename, id) {
           const maxPageNumber = parseInt(paginationItems[paginationItems.length-1].textContent, 10);
 
           for (let i = 1; i <= maxPageNumber; i++) {
-            let paginationItemsDinamic = mainElement.querySelectorAll('.sc-klVQfs') || mainElement.querySelectorAll('.sc-hRJfrW') || mainElement.querySelectorAll('.v-pagination__item');
+            let paginationItemsDinamic = mainElement.querySelectorAll('.sc-klVQfs')
+            if (mainElement.querySelectorAll('.sc-hRJfrW')) {
+              if (mainElement.querySelectorAll('.sc-hRJfrW').length > 0) {
+                paginationItemsDinamic = mainElement.querySelectorAll('.sc-hRJfrW');
+              }
+            } else {
+              if (mainElement.querySelectorAll('.v-pagination__item')){
+                if (mainElement.querySelectorAll('.v-pagination__item').length > 0) {
+                  paginationItemsDinamic = mainElement.querySelectorAll('.v-pagination__item');
+                }
+              }
+            }
             if (mainElement.querySelectorAll('.sc-hRJfrW')) {
               if (mainElement.querySelectorAll('.sc-hRJfrW').length == 0) {
                 paginationItemsDinamic = mainElement.querySelectorAll('.v-pagination__item');
@@ -374,7 +396,7 @@ function start() {
   }
 
   const element2 = document.createElement('div');
-  element2.textContent = "A Extensão 'M.E.C.A. Seedz' está em Execução! v0.5.4";
+  element2.textContent = "A Extensão 'M.E.C.A. Seedz' está em Execução! v0.5.6";
   element2.style.position = "fixed"; 
   if (!document.getElementsByClassName("v-toolbar__content")[1]) {
     element2.style.top = "10px";  
