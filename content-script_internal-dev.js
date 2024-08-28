@@ -67,7 +67,7 @@ async function fetchAndExportAllPages(filename, id) {
           return;
       }
       console.log("Versão Dev");
-      let paginationItems = mainElement.querySelectorAll('.sc-klVQfs')
+      let paginationItems = mainElement.querySelectorAll('.sc-klVQfs');
       if (mainElement.querySelectorAll('.sc-hRJfrW')) {
         if (mainElement.querySelectorAll('.sc-hRJfrW').length > 0) {
           paginationItems = mainElement.querySelectorAll('.sc-hRJfrW');
@@ -96,7 +96,7 @@ async function fetchAndExportAllPages(filename, id) {
           const maxPageNumber = parseInt(paginationItems[paginationItems.length-1].textContent, 10);
 
           for (let i = 1; i <= maxPageNumber; i++) {
-            let paginationItemsDinamic = mainElement.querySelectorAll('.sc-klVQfs')
+            let paginationItemsDinamic = mainElement.querySelectorAll('.sc-klVQfs');
             if (mainElement.querySelectorAll('.sc-hRJfrW')) {
               if (mainElement.querySelectorAll('.sc-hRJfrW').length > 0) {
                 paginationItemsDinamic = mainElement.querySelectorAll('.sc-hRJfrW');
