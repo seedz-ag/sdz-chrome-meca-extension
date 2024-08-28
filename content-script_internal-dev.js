@@ -113,13 +113,18 @@ console.log("Versão Dev4");
                 paginationItemsDinamic = mainElement.querySelectorAll('.v-pagination__item');
               }
             }
+console.log("Versão Dev5");
             let thisPageNumber = mainElement;
             if (mainElement.querySelectorAll('.sc-hRJfrW.kMuCIt')) {
               if (mainElement.querySelectorAll('.sc-hRJfrW.kMuCIt').length != 0) {
                 thisPageNumber = parseInt(mainElement.querySelectorAll('.sc-hRJfrW.kMuCIt')[0].textContent, 10);
               } else {
                 if (mainElement.querySelectorAll('.sc-klVQfs')) {
-                  thisPageNumber = parseInt(mainElement.querySelectorAll('.sc-klVQfs.hIIYss')[0].textContent, 10);
+                  if (mainElement.querySelectorAll('.sc-klVQfs').length != 0) {
+                    thisPageNumber = parseInt(mainElement.querySelectorAll('.sc-klVQfs.hIIYss')[0].textContent, 10);
+                  } else {
+                    thisPageNumber = parseInt(mainElement.querySelectorAll('.v-pagination__item--active')[0].textContent, 10);
+                  }
                 } else {
                   thisPageNumber = parseInt(mainElement.querySelectorAll('.v-pagination__item--active')[0].textContent, 10);
                 }
@@ -127,6 +132,7 @@ console.log("Versão Dev4");
             } else {
               thisPageNumber = parseInt(mainElement.querySelectorAll('.v-pagination__item--active')[0].textContent, 10);
             }
+console.log("Versão Dev6");
             let k = 0;
 
               for (let j = 0; j < paginationItemsDinamic.length; j++) {
