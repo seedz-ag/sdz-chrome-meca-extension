@@ -69,13 +69,13 @@ async function fetchAndExportAllPages(filename, id) {
       console.log("Versão Dev");
       let paginationItems = mainElement.querySelectorAll('.sc-klVQfs');
       if (mainElement.querySelectorAll('.sc-klVQfs')) {
-        if (mainElement.querySelectorAll('.sc-klVQfs').length == 0 {
+        if (mainElement.querySelectorAll('.sc-klVQfs').length == 0) {
           if (mainElement.querySelectorAll('.sc-hRJfrW')) {
             if (mainElement.querySelectorAll('.sc-hRJfrW').length > 0) {
               paginationItems = mainElement.querySelectorAll('.sc-hRJfrW');
             }
           } else {
-            if (mainElement.querySelectorAll('.v-pagination__item')){
+            if (mainElement.querySelectorAll('.v-pagination__item')) {
               if (mainElement.querySelectorAll('.v-pagination__item').length > 0) {
                 paginationItems = mainElement.querySelectorAll('.v-pagination__item');
               }
@@ -97,13 +97,13 @@ console.log("Versão Dev4");
           for (let i = 1; i <= maxPageNumber; i++) {
             let paginationItemsDinamic = mainElement.querySelectorAll('.sc-klVQfs');
             if (mainElement.querySelectorAll('.sc-klVQfs')) {
-              if (mainElement.querySelectorAll('.sc-klVQfs').length == 0 {
+              if (mainElement.querySelectorAll('.sc-klVQfs').length == 0) {
                 if (mainElement.querySelectorAll('.sc-hRJfrW')) {
                   if (mainElement.querySelectorAll('.sc-hRJfrW').length > 0) {
                     paginationItemsDinamic = mainElement.querySelectorAll('.sc-hRJfrW');
                   }
                 } else {
-                  if (mainElement.querySelectorAll('.v-pagination__item')){
+                  if (mainElement.querySelectorAll('.v-pagination__item')) {
                     if (mainElement.querySelectorAll('.v-pagination__item').length > 0) {
                       paginationItemsDinamic = mainElement.querySelectorAll('.v-pagination__item');
                     }
