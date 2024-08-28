@@ -66,38 +66,113 @@ async function fetchAndExportAllPages(filename, id) {
           // console.error("No <main> element found on the page.");
           return;
       }
-      
-      let paginationItems = mainElement.querySelectorAll('.sc-klVQfs') || mainElement.querySelectorAll('.sc-hRJfrW') || mainElement.querySelectorAll('.v-pagination__item');
-      if (mainElement.querySelectorAll('.sc-hRJfrW')) {
-        if (mainElement.querySelectorAll('.sc-hRJfrW').length == 0) {
-          paginationItems = mainElement.querySelectorAll('.v-pagination__item');
+      console.log("Versão Dev");
+      let paginationItems = mainElement.querySelectorAll('.sc-klVQfs');
+      if (mainElement.querySelectorAll('.sc-klVQfs')) {
+        if (mainElement.querySelectorAll('.sc-klVQfs').length == 0) {
+          if (mainElement.querySelectorAll('.sc-hRJfrW')) {
+            if (mainElement.querySelectorAll('.sc-hRJfrW').length > 0) {
+              paginationItems = mainElement.querySelectorAll('.sc-hRJfrW');
+            } else {
+              if (mainElement.querySelectorAll('.v-pagination__item')) {
+                if (mainElement.querySelectorAll('.v-pagination__item').length > 0) {
+                  paginationItems = mainElement.querySelectorAll('.v-pagination__item');
+                }
+              }
+            }
+          } else {
+            if (mainElement.querySelectorAll('.v-pagination__item')) {
+              if (mainElement.querySelectorAll('.v-pagination__item').length > 0) {
+                paginationItems = mainElement.querySelectorAll('.v-pagination__item');
+              }
+            }
+          }
+        }
+      } else {
+        if (mainElement.querySelectorAll('.sc-hRJfrW')) {
+          if (mainElement.querySelectorAll('.sc-hRJfrW').length > 0) {
+            paginationItems = mainElement.querySelectorAll('.sc-hRJfrW');
+          } else {
+            if (mainElement.querySelectorAll('.v-pagination__item')) {
+              if (mainElement.querySelectorAll('.v-pagination__item').length > 0) {
+                paginationItems = mainElement.querySelectorAll('.v-pagination__item');
+              }
+            }
+          }
+        } else {
+          if (mainElement.querySelectorAll('.v-pagination__item')) {
+            if (mainElement.querySelectorAll('.v-pagination__item').length > 0) {
+              paginationItems = mainElement.querySelectorAll('.v-pagination__item');
+            }
+          }
         }
       }
 
       const allData = [];
-
+console.log("Versão Dev2");
       collectTableHeader(mainElement, allData, id);
-
+console.log("Versão Dev3");
       if (paginationItems.length == 0) {
         collectTableData(mainElement, allData, id);
 
       } else {
           const maxPageNumber = parseInt(paginationItems[paginationItems.length-1].textContent, 10);
-
+console.log("Versão Dev4");
           for (let i = 1; i <= maxPageNumber; i++) {
-            let paginationItemsDinamic = mainElement.querySelectorAll('.sc-klVQfs') || mainElement.querySelectorAll('.sc-hRJfrW') || mainElement.querySelectorAll('.v-pagination__item');
-            if (mainElement.querySelectorAll('.sc-hRJfrW')) {
-              if (mainElement.querySelectorAll('.sc-hRJfrW').length == 0) {
-                paginationItemsDinamic = mainElement.querySelectorAll('.v-pagination__item');
+            let paginationItemsDinamic = mainElement.querySelectorAll('.sc-klVQfs');
+            if (mainElement.querySelectorAll('.sc-klVQfs')) {
+              if (mainElement.querySelectorAll('.sc-klVQfs').length == 0) {
+                if (mainElement.querySelectorAll('.sc-hRJfrW')) {
+                  if (mainElement.querySelectorAll('.sc-hRJfrW').length > 0) {
+                    paginationItemsDinamic = mainElement.querySelectorAll('.sc-hRJfrW');
+                  } else {
+                    if (mainElement.querySelectorAll('.v-pagination__item')) {
+                      if (mainElement.querySelectorAll('.v-pagination__item').length > 0) {
+                        paginationItemsDinamic = mainElement.querySelectorAll('.v-pagination__item');
+                      }
+                    }
+                  }
+                } else {
+                  if (mainElement.querySelectorAll('.v-pagination__item')) {
+                    if (mainElement.querySelectorAll('.v-pagination__item').length > 0) {
+                      paginationItemsDinamic = mainElement.querySelectorAll('.v-pagination__item');
+                    }
+                  }
+                }
+              }
+            } else {
+              if (mainElement.querySelectorAll('.sc-klVQfs').length == 0) {
+                if (mainElement.querySelectorAll('.sc-hRJfrW')) {
+                  if (mainElement.querySelectorAll('.sc-hRJfrW').length > 0) {
+                    paginationItemsDinamic = mainElement.querySelectorAll('.sc-hRJfrW');
+                  } else {
+                    if (mainElement.querySelectorAll('.v-pagination__item')) {
+                      if (mainElement.querySelectorAll('.v-pagination__item').length > 0) {
+                        paginationItemsDinamic = mainElement.querySelectorAll('.v-pagination__item');
+                      }
+                    }
+                  }
+                } else {
+                  if (mainElement.querySelectorAll('.v-pagination__item')) {
+                    if (mainElement.querySelectorAll('.v-pagination__item').length > 0) {
+                      paginationItemsDinamic = mainElement.querySelectorAll('.v-pagination__item');
+                    }
+                  }
+                }
               }
             }
+console.log("Versão Dev5");
             let thisPageNumber = mainElement;
             if (mainElement.querySelectorAll('.sc-hRJfrW.kMuCIt')) {
               if (mainElement.querySelectorAll('.sc-hRJfrW.kMuCIt').length != 0) {
                 thisPageNumber = parseInt(mainElement.querySelectorAll('.sc-hRJfrW.kMuCIt')[0].textContent, 10);
               } else {
                 if (mainElement.querySelectorAll('.sc-klVQfs')) {
-                  thisPageNumber = parseInt(mainElement.querySelectorAll('.sc-klVQfs.hIIYss')[0].textContent, 10);
+                  if (mainElement.querySelectorAll('.sc-klVQfs').length != 0) {
+                    thisPageNumber = parseInt(mainElement.querySelectorAll('.sc-klVQfs.hIIYss')[0].textContent, 10);
+                  } else {
+                    thisPageNumber = parseInt(mainElement.querySelectorAll('.v-pagination__item--active')[0].textContent, 10);
+                  }
                 } else {
                   thisPageNumber = parseInt(mainElement.querySelectorAll('.v-pagination__item--active')[0].textContent, 10);
                 }
@@ -105,6 +180,7 @@ async function fetchAndExportAllPages(filename, id) {
             } else {
               thisPageNumber = parseInt(mainElement.querySelectorAll('.v-pagination__item--active')[0].textContent, 10);
             }
+console.log("Versão Dev6");
             let k = 0;
 
               for (let j = 0; j < paginationItemsDinamic.length; j++) {
@@ -374,7 +450,7 @@ function start() {
   }
 
   const element2 = document.createElement('div');
-  element2.textContent = "A Extensão 'M.E.C.A. Seedz' está em Execução! v0.5.5";
+  element2.textContent = "A Extensão 'M.E.C.A. Seedz' está em Execução! v0.5.6";
   element2.style.position = "fixed"; 
   if (!document.getElementsByClassName("v-toolbar__content")[1]) {
     element2.style.top = "10px";  
